@@ -1,11 +1,12 @@
 package start;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import bll.StudentBLL;
-import model.Student;
+import presentation.controller.DisplayClientsController;
+import presentation.controller.DisplayOrdersController;
+import presentation.controller.EditProductController;
+import presentation.controller.OptionsLoginRegisterController;
 
 /**
  * @Author: Technical University of Cluj-Napoca, Romania Distributed Systems
@@ -17,19 +18,30 @@ public class Start {
 
 	public static void main(String[] args) throws SQLException {
 
-		StudentBLL studentBll = new StudentBLL();
+//		StudentBLL studentBll = new StudentBLL();
+//
+//		Student student1 = null;
+//
+//		try {
+//			student1 = studentBll.findStudentById(1245);
+//
+//		} catch (Exception ex) {
+//			LOGGER.log(Level.INFO, ex.getMessage());
+//		}
+//
+//		// obtain field-value pairs for object through reflection
+//		ReflectionExample.retrieveProperties(student1);
 
-		Student student1 = null;
 
-		try {
-			student1 = studentBll.findStudentById(1245);
+		OptionsLoginRegisterController optionsLoginRegisterController = new OptionsLoginRegisterController();
+		optionsLoginRegisterController.startLogic();
 
-		} catch (Exception ex) {
-			LOGGER.log(Level.INFO, ex.getMessage());
-		}
+//		DisplayClientsController displayClientsController = new DisplayClientsController();
+//		displayClientsController.startLogic();
 
-		// obtain field-value pairs for object through reflection
-		ReflectionExample.retrieveProperties(student1);
+//		EditProductController editProductController = new EditProductController();
+//		editProductController.startLogic();
+
 
 	}
 
